@@ -1,10 +1,9 @@
-package pro.sky.lists;
+package pro.sky.lists.services;
 
 import org.springframework.stereotype.Service;
+import pro.sky.lists.bigmama.Employee;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 @Service
 public interface EmployeeService {

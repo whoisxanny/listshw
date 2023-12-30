@@ -1,4 +1,4 @@
-package pro.sky.lists;
+package pro.sky.lists.employeeExceptions;
 
 
 import org.springframework.http.HttpStatus;

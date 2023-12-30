@@ -1,4 +1,4 @@
-package pro.sky.lists;
+package pro.sky.lists.bigmama;
 
 import java.util.Objects;
 
