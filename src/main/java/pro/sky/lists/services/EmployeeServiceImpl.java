@@ -16,8 +16,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeList = new HashMap<>();
     }
     @Override
-    public Employee add(String surName, String name) {
-        Employee employee = new Employee(surName, name);
+    public Employee add(String surName, String name, int salary, int departmentId) {
+        Employee employee = new Employee(surName, name, salary, departmentId);
         if (employeeList.containsKey(surName + name)) {
             throw new EmployeeAlreadyAddedException("We already have him");
         }
@@ -26,8 +26,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee remove(String surName, String name) {
-        Employee employee = new Employee(surName, name);
+    public Employee remove(String surName, String name, int salary, int departmentId) {
+        Employee employee = new Employee(surName, name, salary, departmentId);
         if (employeeList.containsKey(surName + name)) {
             employeeList.remove(surName + name);
             return employee;
@@ -36,8 +36,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee find(String surName, String name) {
-        Employee employee = new Employee(surName, name);
+    public Employee find(String surName, String name, int salary, int departmentId) {
+        Employee employee = new Employee(surName, name, salary, departmentId);
         if (employeeList.containsKey(surName + name)) {
             return employee;
         }
