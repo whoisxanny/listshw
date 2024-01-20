@@ -1,6 +1,10 @@
 package pro.sky.lists.bigmama;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.Objects;
+
+import static org.apache.commons.lang3.StringUtils.capitalize;
 
 public class Employee {
     private String surname;
@@ -12,8 +16,8 @@ public class Employee {
 
 
     public Employee(String surname, String name, Integer salary, Integer departmentId) {
-        this.surname = surname;
-        this.name = name;
+        this.surname = capitalize(surname.toLowerCase());
+        this.name = capitalize(name.toLowerCase());
         this.salary = salary;
         this.departmentId = departmentId;
         this.id = ++idCounter;
