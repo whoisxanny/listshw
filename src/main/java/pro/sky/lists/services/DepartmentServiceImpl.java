@@ -44,7 +44,7 @@ public class DepartmentServiceImpl implements DepartmentService{
     }
 
     @Override
-    public Collection<Employee> findEmployeeByDepartment(int departmentId) {
+    public Collection<Employee> findEmployeesByDepartment(int departmentId) {
         return employeeService.findAll().stream()
                 .filter(e -> e.getDepartmentId() == departmentId)
                 .collect(Collectors.toList());
