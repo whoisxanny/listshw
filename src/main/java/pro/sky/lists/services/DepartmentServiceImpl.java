@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static java.util.Comparator.comparingInt;
+
 @Service
 public class DepartmentServiceImpl implements DepartmentService{
 
@@ -25,16 +27,16 @@ public class DepartmentServiceImpl implements DepartmentService{
     public Employee findEmployeeWithMinSalary(int departmentId) {
         return employeeService
                 .findAll().stream().filter(employee -> employee.getDepartmentId() == departmentId)
-                .min(Comparator.comparingInt(Employee::getSalary))
+                .min(comparingInt(Employee::getSalary))
                 .orElseThrow(RuntimeException::new);
     }
 
     @Override
     public Employee findEmployeeWithMaxSalary(int departmentId) {
         return employeeService
-                .findAll().stream().filter(employee -> employee.getDepartmentId() == departmentId)
-                .max(Comparator.comparingInt(Employee::getSalary))
-                .orElseThrow(RuntimeException::new);
+                .findAll().stream().filter(e -> e.getDepartmentId() == departmentId)
+                .max(comparingInt(Employee::getSalary))
+                .orElseThrow();
     }
 
     @Override
